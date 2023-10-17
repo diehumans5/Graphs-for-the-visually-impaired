@@ -1,0 +1,38 @@
+.div_container {
+    position :relative
+}
+
+.div_c1 {
+    position : absolute;
+    left : 0
+}
+
+.div_c2 {
+    position : absolute;
+    left : 34%
+}
+
+.div_c3 {
+    position : absolute;
+    right : 0
+}
+
+.div_footer {
+    padding-top : 240px
+}
+
+.div-image {
+    padding-top : 70px;
+    width : 10%;
+    height : 100%
+}
+
+.img {
+    padding-left : 300%;
+}
+
+.div-h1 {
+    padding-top : 20px;
+    text-align: center;
+    align-items: center;
+}

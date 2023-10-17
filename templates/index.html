@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallothon</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type= "text/css" href={{ url_for('static',filename = 'styles.css')}}>
+    <style>
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4; /* Adjust the opacity value as needed */
+            z-index: -1; /* To position the background behind other content */
+            }
+        body{
+            text-align: center;
+        }
+
+        h1,h2,h4,p{
+            font-family: 'Caveat', cursive;
+            font-family: 'Young Serif', serif;
+            
+        }
+
+        audio{
+            display:'none'
+        }
+       
+        
+    </style>
+
+</head>
+<body class="container">
+    <img src="{{ url_for('static',filename = 'bg1.jpg')}}" alt="background image showing a graph" id="bg"> 
+    <div class="w3-panel w3-teal w3-hover-white w3-border w3-border-purple w3-round-xxlarge" id="1">
+        <h1 class="w3-panel w3-hover-text-amber w3-hover-black w3-border w3-border-teal w3-round-xxlarge"><a href ="#">Welcome!! How u doing?</a></h1>
+    </div>
+
+        <div class="w3-container">
+            <header class="w3-container"><h1 class="w3-hover-text-amber w3-hover-black w3-round-xxlarge" id="2">Everything You Want to know</h1></header>
+            <h4 class="w3-panel w3-hover-text-amber w3-hover-black w3-round-xxlarge" ><a href = "#">The following section shows how the websites works :</a></h4>
+            <div class = "div_container">
+            <div class="w3-card-7 w3-hover-shadow div_c1" style="width: 32%; display: inline-block;">
+                <header class="w3-container w3-blue">
+                    <h1 class="w3-hover-text-amber w3-hover-black w3-round-xxlarge" id="3"><a>About the website</a></h1>
+                </header>
+                <div class="w3-panel w3-white w3-hover-text-amber w3-hover-black w3-round-xxlarge" id="4">
+                    <p><a href = "">This website aims to help visually impaired people 
+                        help understand mathematica graphs by making different 
+                        frequencies to help them visualize how the graph actually is
+                    </a></p>
+                </div>
+            </div>
+            <div class="w3-card-7 w3-hover-shadow div_c2" style="width: 32%; display: inline-block;" id="5">
+                <header class="w3-container w3-blue">
+                    <h1 class="w3-hover-text-amber w3-hover-black w3-round-xxlarge"><a href = "#">Giving Inputs</a></h1>
+                </header>
+                <div class="w3-panel w3-white w3-hover-text-amber w3-hover-black w3-round-xxlarge" id="6">
+                    <p><a href = "">You need to give voice commands for the mathematical
+                        equations such as sinx or cosx logx etc.., press anywhere in the 
+                        website to turn give voice inputs
+                    </a></p>
+                </div>
+            </div>
+
+            <div class="w3-card-7 w3-hover-shadow div_c3" style="width: 32%; display: inline-block;">
+                <header class="w3-container w3-blue">
+                    <h1 class="w3-hover-text-amber w3-hover-black w3-round-xxlarge"><a href = "#">Output</a></h1>
+                </header>
+                <div class="w3-panel w3-white w3-hover-text-amber w3-hover-black w3-round-xxlarge">
+                    <p><a href = "#">After You provide the equation you Want
+                        there will be a graph generated and You will here 
+                        frequency varying sound that shows the nature of the graph
+                    </a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <footer class = "div_footer" style="margin-top:10%; margin-bottom: 20%; text-align: left;">
+            <!--This is for the input section -->
+            <div class="w3-container">
+                <h2 class="w3-hover-text-amber w3-hover-black w3-round-xxlarge"><a href = "">Say your query here :</a></h2>
+              
+                <div id = "output" class="w3-card-4 w3-hover-shadow w3-cyan" style="width:100%; height: 450px;">
+                  <header class="w3-container w3-light-grey" style="text-align: center;">
+                    <h2 class="w3-hover-text-amber w3-hover-black w3-round-xxlarge"><a href = "">Click to start listing :</a></h2>
+                  </header>
+                  <div class="w3-container"  >
+                    <img src="{{ url_for('static',filename = 'microphone.jpeg')}}" alt="Image of microphone" class="w3-left w3-circle" style="margin-left: 48%;margin-top: 120px; width:50px;">
+                  </div>
+                </div>
+              </div>
+    
+                
+            </div>
+            <h1 class = "div-h1"><a href = "">Graph</a></h1>
+            <div class = "div-image" >
+                <img src="{{ url_for('static',filename = 'graph.png')}}"  class = "img" srcset="">
+                <audio controls autoplay hidden = "hidden">
+                    <source src="{{ url_for('static',filename = 'output.wav')}}" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </footer>
+        <script src="{{ url_for('static',filename = 'index.js')}}">
+
+        </script>
+</body>
+</html>

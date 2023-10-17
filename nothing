@@ -1,0 +1,16 @@
+fetch('http://localhost:5000/receive_data', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSend),
+    })
+    .then(response => response.json())
+    .then(data => {
+        dataok = data;
+        console.log('Success:', dataok);
+    })
+    .catch(error => {
+        dataok = "Can you Repeat again"
+        console.error('Error:', error);
+    });
